@@ -1,1 +1,1 @@
-export * from './lib/ng-gc/ng-gc.component';
+export * from './lib/components/sentiment-analyzer/sentiment-analyzer.component';
