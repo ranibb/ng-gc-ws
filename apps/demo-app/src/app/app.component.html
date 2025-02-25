@@ -1,2 +1,15 @@
-<ng-gc-sentiment-analyzer></ng-gc-sentiment-analyzer>
+<header>
+  <nav class="navbar navbar-default bg-base-100">
+    <a class="btn btn-ghost text-xl">
+      Angular Gemini Demo App
+    </a>
+  </nav>
+</header>
+<main class="mx-auto max-w-3xl p-8">
+  <form class="form relative grid grid-cols-1 md:grid-cols-2 gap-4">
+    <textarea class="textarea w-full border-2"
+    placeholder="Type something to analyze the sentiment"></textarea>
+  </form>
+  <ng-gc-sentiment-analyzer></ng-gc-sentiment-analyzer>
+</main>
 <router-outlet></router-outlet>
