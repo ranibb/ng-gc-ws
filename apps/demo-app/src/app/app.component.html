@@ -6,10 +6,10 @@
   </nav>
 </header>
 <main class="mx-auto max-w-3xl p-8">
-  <form class="form relative grid grid-cols-1 md:grid-cols-2 gap-4">
-    <textarea class="textarea w-full border-2"
-    placeholder="Type something to analyze the sentiment"></textarea>
+  <form [formGroup]="form" class="form relative grid grid-cols-1 md:grid-cols-2 gap-4">
+    <textarea formControlName="inputTextVal" class="textarea w-full border-2 border-base-content"
+    placeholder="Type something to analyze the sentiment" rows="3"></textarea>
   </form>
-  <ng-gc-sentiment-analyzer></ng-gc-sentiment-analyzer>
+  <ng-gc-sentiment-analyzer [text]="inputTextValDebounced()"></ng-gc-sentiment-analyzer>
 </main>
 <router-outlet></router-outlet>

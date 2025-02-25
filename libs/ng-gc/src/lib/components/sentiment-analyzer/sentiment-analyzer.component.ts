@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,4 +7,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sentiment-analyzer.component.html',
   styleUrl: './sentiment-analyzer.component.css',
 })
-export class SentimentAnalyzerComponent {}
+export class SentimentAnalyzerComponent {
+  text = input.required<string>();
+}
