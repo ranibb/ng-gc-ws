@@ -7,9 +7,10 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@nx/angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "plugins": ["apps/demo-app/plugins/env-var-plugin.js"],
         "outputPath": "dist/apps/demo-app",
         "index": "apps/demo-app/src/index.html",
         "browser": "apps/demo-app/src/main.ts",
@@ -50,7 +51,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/angular:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "demo-app:build:production"
