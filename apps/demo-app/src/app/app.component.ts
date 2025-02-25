@@ -10,4 +10,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppComponent {
   title = 'demo-app';
+  constructor() {
+    console.log(process.env.NG_GC_GEMINI_API_KEY)
+   }
 }
