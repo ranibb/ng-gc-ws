@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { GeminiService } from '../../services/gemini.service';
 
 @Component({
   selector: 'ng-gc-sentiment-analyzer',
@@ -8,5 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sentiment-analyzer.component.css',
 })
 export class SentimentAnalyzerComponent {
+  geminiService = inject(GeminiService);
   text = input.required<string>();
 }
