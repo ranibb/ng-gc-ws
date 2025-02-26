@@ -8,6 +8,18 @@
     [formGroup]="form"
     class="form relative grid grid-cols-1 md:grid-cols-2 gap-4"
   >
+    <div>
+      <select
+        name="model"
+        formControlName="model"
+        class="select select-bordered w-full max-w-xs"
+      >
+        <option disabled>Select a Gemini model</option>
+        @for(model of models; track model.name) {
+        <option value="{{ model.name }}">{{ model.title }}</option>
+        }
+      </select>
+    </div>
     <div class="flex flex-col gap-4 items-end">
       <textarea
         formControlName="inputTextVal"
@@ -17,6 +29,7 @@
       ></textarea>
       <ng-gc-sentiment-analyzer
         [text]="inputTextValDebounced()"
+        [config]="sentimentConfig()"
       ></ng-gc-sentiment-analyzer>
     </div>
   </form>

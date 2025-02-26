@@ -1,7 +1,7 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, model, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
-import { NGGC_API_CONFIG } from '@codewithrani/ng-gc';
+import { NGGC_API_CONFIG, NgGCSupportedModels } from '@codewithrani/ng-gc';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -10,7 +10,8 @@ export const appConfig: ApplicationConfig = {
     {
       provide: NGGC_API_CONFIG,
       useValue: {
-        apiKey: process.env.NG_GC_GEMINI_API_KEY
+        apiKey: process.env.NG_GC_GEMINI_API_KEY,
+        model: NgGCSupportedModels[1].name,
       }
     }
   ],

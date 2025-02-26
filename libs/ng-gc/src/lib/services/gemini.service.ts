@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { NGGC_API_CONFIG } from '../tokens/gemini-api-config';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { NGGCSentimentResponse } from '../types';
+import { NGGCSentimentAnalysisConfig, NGGCSentimentResponse } from '../types';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,13 @@ export class GeminiService {
     if (!this.geminiApiConfig.apiKey) {
       throw new Error('Gemini API key is required.');
     }
+    if (!this.geminiApiConfig.model) {
+      throw new Error('Gemini model is required.');
+    }
     this.genAI = new GoogleGenerativeAI(this.geminiApiConfig.apiKey);
   }
 
-  async analyze(text: string): Promise<NGGCSentimentResponse> {
+  async analyze(text: string, config: NGGCSentimentAnalysisConfig | null): Promise<NGGCSentimentResponse> {
     const prompt = `
     You are an expert sentiment analyst and I want you to analyze the sentiment of the text
     I will provide to you. With a rating from 0 to 10 in terms of intensity of the sentiment.
@@ -33,7 +36,7 @@ export class GeminiService {
     }
   `;
     const model = this.genAI.getGenerativeModel({
-      model: 'gemini-1.5-flash',
+      model: config?.model || this.geminiApiConfig.model,
       generationConfig: {
         responseMimeType: 'application/json',
       }
