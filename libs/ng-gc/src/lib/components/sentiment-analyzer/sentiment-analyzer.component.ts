@@ -1,4 +1,4 @@
-import { Component, effect, inject, input, signal } from '@angular/core';
+import { Component, effect, HostBinding, inject, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GeminiService } from '../../services/gemini.service';
 import { NGGCSentimentResponse } from '../../types';
@@ -15,11 +15,16 @@ export class SentimentAnalyzerComponent {
   text = input.required<string>();
   sentiment = signal<NGGCSentimentResponse | null>(null);
   loading = signal(false);
+  @HostBinding('attr.data-sentiment')
+  get sentimentAttr() {
+    if (this.loading()) return 'loading';
+    return this.sentiment()?.category || null;
+  }
 
   constructor() {
     effect(() => {
       const textVal = this.text().trim();
-      if(!textVal) {
+      if (!textVal) {
         this.loading.set(false);
         this.sentiment.set(null);
         return;
