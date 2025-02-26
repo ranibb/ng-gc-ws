@@ -1,2 +1,5 @@
-<p>{{sentiment()?.sentiment}} {{sentiment()?.emoji}}</p>
-<p>{{text()}}</p>
+@if(sentiment() && !loading()) {
+  <p>{{sentiment()?.sentiment}} {{sentiment()?.emoji}}</p>
+} @else if (loading()) {
+  <p>loading...</p>
+}

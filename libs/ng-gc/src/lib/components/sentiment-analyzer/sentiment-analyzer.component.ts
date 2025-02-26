@@ -14,17 +14,21 @@ export class SentimentAnalyzerComponent {
   geminiService = inject(GeminiService);
   text = input.required<string>();
   sentiment = signal<NGGCSentimentResponse | null>(null);
+  loading = signal(false);
 
   constructor() {
     effect(() => {
       const textVal = this.text().trim();
       if(!textVal) {
+        this.loading.set(false);
         this.sentiment.set(null);
         return;
       };
+      this.loading.set(true);
       this.geminiService.analyze(this.text()).then(result => {
         console.log('result', result);
         this.sentiment.set(result);
+        this.loading.set(false);
       })
     })
   }
