@@ -21,7 +21,7 @@ export class GeminiService {
     You are an expert sentiment analyst and I want you to analyze the sentiment of the text
     I will provide to you. With a rating from 0 to 10 in terms of intensity of the sentiment.
     Give an emoji for the particular rating.
-    The sentiment can be categorized as positive, happy, appreciative, etc. Or negative, toxic, vulgar, etc.
+    The category can be positive, happy, appreciative, etc. Or negative, toxic, vulgar, etc.
     The response should be a stringified JSON in the following format:
     {
       "sentiment": string,
