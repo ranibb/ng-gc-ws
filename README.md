@@ -1,10 +1,19 @@
-# NgGcWs
+# Angular Gemini Components Workspace
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+A collection of Angular apps and libraries using the Gemini API.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+[!banner](./assets/banner.png)
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## Setup
+
+To get started, create a file named `.env` insides the `apps/demo-app` folder. Then add the following to it:
+
+```bash
+NG_GC_GEMINI_API_KEY=YOUR_GEMINI_KEY
+```
+
+Note: you can get your API key from [Google AI Studio](https://aistudio.google.com/).
+
 
 ## Finish your CI setup
 
