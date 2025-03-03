@@ -24,10 +24,10 @@ export class AppComponent {
       model: val,
     }))
     ), {
-      initialValue: {
-        model: NgGCSupportedModels[0].name
-      }
-    })
+    initialValue: {
+      model: NgGCSupportedModels[0].name
+    }
+  })
   inputTextValDebounced: Signal<string> = toSignal(
     this.form.controls.inputTextVal.valueChanges.pipe(debounceTime(1000)),
     { initialValue: '' }

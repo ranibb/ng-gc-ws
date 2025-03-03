@@ -8,12 +8,10 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   daisyui: {
-    themes: ["synthwave"]
+    themes: ['synthwave'],
   },
   theme: {
     extend: {},
   },
-  plugins: [
-    require('daisyui')
-  ],
+  plugins: [require('daisyui')],
 };
