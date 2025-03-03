@@ -45,6 +45,7 @@ export class AppComponent {
 
   updateApiKey(apiKey: string, event: SubmitEvent): void {
     event.preventDefault();
+    // this.geminiService.geminiApiConfig.debug = true;
     this.geminiService.geminiApiConfig.apiKey = apiKey;
   }
 }

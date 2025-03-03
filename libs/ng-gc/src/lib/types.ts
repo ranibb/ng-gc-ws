@@ -1,4 +1,4 @@
-export type NGGCSentimentResponse = {
+export type NGGCSentiment = {
   sentiment: string;
   rating: number;
   emoji: string;
@@ -19,4 +19,5 @@ export type NGGCSupportedModel = {
 export type NgGCConfig = {
   apiKey: string;
   model: AiModel;
+  debug?: boolean;
 };

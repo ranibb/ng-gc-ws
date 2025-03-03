@@ -4,25 +4,26 @@ A collection of Angular apps and libraries using the Gemini API.
 
 [!banner](./assets/banner.png)
 
-## Setup
+## Demo
+- Sentiment Analysis Component
+  - [https://rani.github.io/ng-gc-ws/](https://rani.github.io/ng-gc-ws/)
 
-To get started, create a file named `.env` insides the `apps/demo-app` folder. Then add the following to it:
+You will be asked about your Gemini API Key. But don't worry, it won't be stored, or seen by anyone.
+
+## Using this code repository locally
+
+To get started, clone the repository, run `npm install` from the root of this workspace, and then create a file named `.env` inside the `apps/demo-app` folder. 
+Then add the following to it:
 
 ```bash
 NG_GC_GEMINI_API_KEY=YOUR_GEMINI_KEY
 ```
 
-Note: you can get your API key from [Google AI Studio](https://aistudio.google.com/).
+> Note: you can get your API key from [Google AI Studio](https://aistudio.google.com/)
 
+## Run the demo app
 
-## Finish your CI setup
-
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/sZr4iN29nK)
-
-
-## Run tasks
-
-To run the dev server for your app, use:
+To run the dev server for the demo app, use:
 
 ```sh
 npx nx serve demo-app
@@ -39,7 +40,7 @@ To see all available targets to run for a project, run:
 ```sh
 npx nx show project demo-app
 ```
-
+        
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
 
 [More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
@@ -69,23 +70,4 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 
 [Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Google Cloud Credits are provided for this project to me

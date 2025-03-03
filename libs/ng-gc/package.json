@@ -1,9 +1,13 @@
 {
   "name": "@codewithrani/ng-gc",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "^19.1.0",
-    "@angular/core": "^19.1.0"
+    "@angular/core": "^19.1.0",
+    "@google/generative-ai": "^0.22.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
 }
