@@ -7,7 +7,7 @@
       class="px-4"
       target="_blank"
       rel="noreferrer noopener"
-      href="https://github.com/ranibb/ng-gc-ws"
+      href="https://github.com/AhsanAyaz/ng-gc-ws"
       ><img
         src="assets/github-mark-white.svg"
         class="w-4 h-4"
@@ -75,6 +75,7 @@
         (input)="typing.set(true)"
       ></textarea>
       <ng-gc-sentiment-analyzer
+        (sentimentUpdated)="addToHistory($event)"
         [model]="form.controls.model.value"
         [text]="inputTextValDebounced()"
         [hideSentiment]="!form.controls.showSentiment.value"
