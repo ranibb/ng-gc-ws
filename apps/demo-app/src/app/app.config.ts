@@ -1,7 +1,9 @@
-import { ApplicationConfig, model, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { NGGC_API_CONFIG, NgGCSupportedModels } from '@codewithrani/ng-gc';
+import { provideToastr } from 'ngx-toastr';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -10,9 +12,11 @@ export const appConfig: ApplicationConfig = {
     {
       provide: NGGC_API_CONFIG,
       useValue: {
-        apiKey: process.env.NG_GC_GEMINI_API_KEY,
         model: NgGCSupportedModels[1].name,
-      }
-    }
+        apiKey: process.env.NG_GC_GEMINI_API_KEY,
+      },
+    },
+    provideToastr(),
+    provideAnimations(),
   ],
 };
