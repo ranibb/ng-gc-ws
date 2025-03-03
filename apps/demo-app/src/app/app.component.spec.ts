@@ -2,11 +2,25 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
+import { GeminiService } from '@codewithrani/ng-gc';
+import { provideToastr } from 'ngx-toastr';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent, NxWelcomeComponent, RouterModule.forRoot([])],
+      providers: [
+        {
+          provide: GeminiService,
+          useClass: class GeminiServiceMock {
+            geminiApiConfig = {
+              model: '',
+              apiKey: '',
+            };
+          },
+        },
+        provideToastr(),
+      ],
     }).compileComponents();
   });
 
@@ -14,14 +28,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome demo-app'
+    expect(compiled.querySelector('header nav')?.textContent).toContain(
+      'Sentiment Analyzer with Google Gemini & Angular'
     );
-  });
-
-  it(`should have as title 'demo-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('demo-app');
   });
 });
