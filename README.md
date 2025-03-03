@@ -2,11 +2,11 @@
 
 A collection of Angular apps and libraries using the Gemini API.
 
-[!banner](./assets/banner.png)
+![banner](./assets/banner.png)
 
 ## Demo
 - Sentiment Analysis Component
-  - [https://rani.github.io/ng-gc-ws/](https://rani.github.io/ng-gc-ws/)
+  - [https://ranibb.github.io/ng-gc-ws/](https://ranibb.github.io/ng-gc-ws/)
 
 You will be asked about your Gemini API Key. But don't worry, it won't be stored, or seen by anyone.
 
