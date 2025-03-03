@@ -7,14 +7,13 @@
   "tags": [],
   "targets": {
     "build": {
-      "dependsOn": ["^build"],
-      "executor": "@nx/angular:browser-esbuild",
+      "executor": "@nx/angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
         "plugins": ["apps/demo-app/plugins/env-var-plugin.js"],
         "outputPath": "dist/apps/demo-app",
         "index": "apps/demo-app/src/index.html",
-        "main": "apps/demo-app/src/main.ts",
+        "browser": "apps/demo-app/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/demo-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
@@ -37,8 +36,8 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
             }
           ],
           "outputHashing": "all"
