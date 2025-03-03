@@ -1,4 +1,6 @@
-import { InjectionToken } from "@angular/core";
-import { NgGCConfig } from "../types";
+import { InjectionToken } from '@angular/core';
+import { NgGCConfig } from '../types';
 
-export const NGGC_API_CONFIG = new InjectionToken<NgGCConfig>('NGGC_API_CONFIG');
+export const NGGC_API_CONFIG = new InjectionToken<NgGCConfig>(
+  'NGGC_API_CONFIG'
+);

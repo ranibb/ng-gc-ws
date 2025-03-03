@@ -1,14 +1,13 @@
-
 export type NGGCSentimentResponse = {
   sentiment: string;
   rating: number;
   emoji: string;
-  category: "positive" | "negative"
-}
+  category: 'positive' | 'negative';
+};
 
-export type NGGCSentimentAnalysisConfig = {
+export type NGGCSentimentAnalaysisConfig = {
   model?: string;
-}
+};
 
 type AiModel = 'gemini-1.5-pro' | 'gemini-1.5-flash';
 
@@ -20,4 +19,4 @@ export type NGGCSupportedModel = {
 export type NgGCConfig = {
   apiKey: string;
   model: AiModel;
-}
+};
