@@ -19,7 +19,10 @@
     "@nx/angular:browser-esbuild": {
       "cache": true,
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "options": {
+        "tailwindConfig": "./apps/demo-app/tailwind.config.js"
+      }
     },
     "@nx/eslint:lint": {
       "cache": true,
